@@ -38,9 +38,11 @@ public class GestureSettingsActivity extends PreferenceActivity {
 
 		updateGesturesState(getPreferenceScreen());
 		
-		String keyAdWhirl = "c7bce28b019a4e8dbcf33091bce6b542";
+		/*
+		String keyAdWhirl = "c693c6fa514a4f22a362c25cccdd0d7d";
 		//this.getListView().addFooterView(new com.admob.android.ads.AdView(this));
 		this.getListView().addFooterView(new AdWhirlLayout(this, keyAdWhirl));
+		*/
 	}
 
 	private void updateGesturesState(final PreferenceGroup group) {

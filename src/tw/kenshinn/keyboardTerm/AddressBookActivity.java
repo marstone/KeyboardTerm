@@ -104,7 +104,10 @@ public class AddressBookActivity extends ListActivity {
 //		AdWhirlAdapter.setGoogleAdSenseAppName("KeyboardTerm"); 
 //		AdWhirlAdapter.setGoogleAdSenseCompanyName("Kenshinn.TW"); 
 		
-		String keyAdWhirl = "c7bce28b019a4e8dbcf33091bce6b542";
+		/*
+		 * commented by marstone, 2012/03/22, to remove ads.
+		 * 
+		String keyAdWhirl = "c693c6fa514a4f22a362c25cccdd0d7d";
 		SharedPreferences adWhirlPrefs = this.getSharedPreferences(
 				keyAdWhirl, Context.MODE_PRIVATE);
 		
@@ -121,6 +124,7 @@ public class AddressBookActivity extends ListActivity {
 		AdWhirlLayout adWhirlLayout = new AdWhirlLayout(this, keyAdWhirl);			//1
         adonContainerView = (RelativeLayout)findViewById(R.id.ad);//1
         adonContainerView.addView(adWhirlLayout);	
+		*/
 		
 		
 //	     	AdView  adView = new AdView(this); 	
@@ -165,8 +169,10 @@ public class AddressBookActivity extends ListActivity {
 				Toast.makeText(this, R.string.addressbook_quick_connect_failed_parse, 1000);
 			}
 		}
-		if(hostname.indexOf(".")==-1) //If it's not a domain name, assume it's twbbs prefix
-			hostname += ".twbbs.org"; 
+		if(hostname.indexOf(".")==-1) //If it's not a domain name, assume it's sjtu suffix
+			hostname += ".sjtu.edu.cn"; 
+			// hostname += ".twbbs.org";
+		
 		//Start Connection
 		Host host = new Host();
 		host.setHost(hostname);
@@ -228,13 +234,13 @@ public class AddressBookActivity extends ListActivity {
 	 */
 	private void initZhCnHost() {
 		Host h1 = new Host();
-		h1.setName(getText(R.string.addressbook_site_lilacbbs).toString());
+		h1.setName(getText(R.string.addressbook_site_sjtu).toString());
 		h1.setProtocal("Telnet");
 		h1.setEncoding("GBK");
-		h1.setHost("lilacbbs.com");
+		h1.setHost("bbs.sjtu.edu.cn");
 		h1.setPort(23);
 		dbUtils.hostDelegate.insert(h1);
-
+		
 		Host h2 = new Host();
 		h2.setName(getText(R.string.addressbook_site_newsmth).toString());
 		h2.setProtocal("Telnet");
@@ -251,27 +257,35 @@ public class AddressBookActivity extends ListActivity {
 		h3.setPort(23);
 		dbUtils.hostDelegate.insert(h3);
 
+		Host h4 = new Host();
+		h4.setName(getText(R.string.addressbook_site_lilacbbs).toString());
+		h4.setProtocal("Telnet");
+		h4.setEncoding("GBK");
+		h4.setHost("lilacbbs.com");
+		h4.setPort(23);
+		dbUtils.hostDelegate.insert(h4);
+
 	}
 
 	/*
 	 * init Taiwan BBS sites
 	 */
 	private void initZhTwHost() {
-		Host h4 = new Host();
-		h4.setName(getText(R.string.addressbook_site_ptt).toString());
-		h4.setProtocal("Telnet");
-		h4.setEncoding("Big5");
-		h4.setHost("ptt.cc");
-		h4.setPort(23);
-		dbUtils.hostDelegate.insert(h4);
-
 		Host h5 = new Host();
-		h5.setName(getText(R.string.addressbook_site_ptt2).toString());
+		h5.setName(getText(R.string.addressbook_site_ptt).toString());
 		h5.setProtocal("Telnet");
 		h5.setEncoding("Big5");
-		h5.setHost("ptt2.twbbs.org");
+		h5.setHost("ptt.cc");
 		h5.setPort(23);
 		dbUtils.hostDelegate.insert(h5);
+
+		Host h6 = new Host();
+		h6.setName(getText(R.string.addressbook_site_ptt2).toString());
+		h6.setProtocal("Telnet");
+		h6.setEncoding("Big5");
+		h6.setHost("ptt2.twbbs.org");
+		h6.setPort(23);
+		dbUtils.hostDelegate.insert(h6);
 	}
 
 	/**

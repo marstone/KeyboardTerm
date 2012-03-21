@@ -12,7 +12,7 @@
 	<string name="addressbook_edit_host">修改</string>
 	<string name="addressbook_delete_host">刪除</string> 
 
-    <string name="addressbook_quick_connect">如: ptt 或 ptt2.cc:23 </string>
+    <string name="addressbook_quick_connect">如: bbs 或 bbs.sjtu.edu.cn:23 </string>
 	<string name="addressbook_quick_connect_button">快速連線</string>
     
   

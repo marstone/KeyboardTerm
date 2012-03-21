@@ -14,7 +14,7 @@
 	<string name="addressbook_edit_host">Modify</string>
 	<string name="addressbook_delete_host">Delete</string>
 
-	<string name="addressbook_quick_connect">( twbbs prefix / host )[:port]</string>
+	<string name="addressbook_quick_connect">( sjtu suffix / host )[:port]</string>
 	<string name="addressbook_quick_connect_button">Connect</string>
 	<string name="addressbook_quick_connect_failed_parse">Hostname misformatted</string>
 	<string name="addressbook_site_lilacbbs">紫丁香社区</string>
